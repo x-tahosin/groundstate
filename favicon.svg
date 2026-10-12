@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#1C2E28"/>
+  <!-- Sun dipping behind mountain -->
+  <circle cx="38" cy="24" r="10" fill="#E59838" opacity="0.9"/>
+  <!-- Mountain ridge foreground -->
+  <path d="M6 52 L24 28 L36 40 L48 22 L58 52 Z" fill="#2E483F"/>
+  <path d="M18 52 L32 34 L42 44 L52 30 L60 52 Z" fill="#3D5F54" opacity="0.8"/>
+  <path d="M6 52 L58 52 L58 56 L6 56 Z" fill="#15241F"/>
+</svg>
