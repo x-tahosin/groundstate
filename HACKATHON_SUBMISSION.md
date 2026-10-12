@@ -11,8 +11,8 @@
 | :--- | :--- |
 | **Project Title** | **GroundState 🌿** |
 | **Short Tagline** | Micro-Escape Radar & 3-Minute Somatic Reset for Desk Workers, powered by DigitalOcean Serverless AI |
-| **Live Demo URL** | `http://localhost:4500` (or DigitalOcean App Platform live URL) |
-| **Repository URL** | `https://github.com/x-tahosin/groundstate` |
+| **Live Demo URL** | [https://88c1c3efcc28af.lhr.life](https://88c1c3efcc28af.lhr.life) |
+| **Repository URL** | [https://github.com/x-tahosin/groundstate](https://github.com/x-tahosin/groundstate) |
 | **DEV.to Draft Post** | [Edit on DEV.to](https://dev.to/tahosin/groundstate-micro-escape-radar-3-minute-somatic-reset-powered-by-digitalocean-serverless-gpu-405l-temp-slug-4975552/edit) (ID: `4835111`) |
 | **Official Cover Image** | `https://i.imgur.com/Z4ry72j.png` (Custom GroundState Banner) |
 | **In-Article Home Image** | `https://i.imgur.com/UwAEg3s.png` (Home UI Showcase) |
