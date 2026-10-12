@@ -19,6 +19,7 @@ import Footer from '../../components/Footer.jsx';
 import SensoryResetModal from '../../components/SensoryResetModal.jsx';
 import PocketModeModal from '../../components/PocketModeModal.jsx';
 import DigitalOceanAIModal from '../../components/DigitalOceanAIModal.jsx';
+import { getAssetPath } from '../../utils/assetPath.js';
 
 export default function HowItWorksPage() {
   const [showSensoryModal, setShowSensoryModal] = useState(false);
@@ -98,7 +99,7 @@ export default function HowItWorksPage() {
             title="Click to start live 3-minute reset"
           >
             <img
-              src="/assets/phone_mockup_clean.png"
+              src={getAssetPath('/assets/phone_mockup_clean.png')}
               alt="3-Minute Reset Screen on Smartphone"
               style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '24px' }}
             />

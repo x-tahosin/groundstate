@@ -969,6 +969,7 @@ html, body {
   border-radius: 26px;
   background: 
     radial-gradient(circle at 50% 50%, rgba(52, 231, 154, 0.15) 0%, transparent 70%),
+    url('/groundstate/assets/phone_mockup.png') center/cover no-repeat,
     url('/assets/phone_mockup.png') center/cover no-repeat,
     #0c1a14;
   height: 480px;

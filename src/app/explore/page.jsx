@@ -8,7 +8,8 @@ import Footer from '../../components/Footer.jsx';
 import SensoryResetModal from '../../components/SensoryResetModal.jsx';
 import PocketModeModal from '../../components/PocketModeModal.jsx';
 import DigitalOceanAIModal from '../../components/DigitalOceanAIModal.jsx';
-import { BASELINE_PARKS, enrichParksWithUserDistance } from '../../lib/geospatialService.js';
+import { BASELINE_PARKS, filterParks, enrichParksWithUserDistance, calculateHaversineDistance } from '../../lib/geospatialService.js';
+import { getAssetPath } from '../../utils/assetPath.js';
 
 export default function ExplorePage() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -70,7 +71,7 @@ export default function ExplorePage() {
           const prepared = data.parks.map((p, idx) => ({
             ...p,
             pinCoords: p.pinCoords || defaultPins[idx % defaultPins.length],
-            thumb: p.thumb || (idx % 2 === 0 ? '/assets/thumb_botanical_sm.png' : '/assets/thumb_central_park.png'),
+            thumb: p.thumb || (idx % 2 === 0 ? getAssetPath('/assets/thumb_botanical_sm.png') : getAssetPath('/assets/thumb_central_park.png')),
           }));
 
           setParks(prepared);
@@ -79,7 +80,41 @@ export default function ExplorePage() {
           }
         }
       } catch (err) {
-        console.warn('Live places fetch fallback:', err);
+        console.warn('Live places fetch fallback, computing locally:', err);
+        if (!isCancelled) {
+          // If user location is outside reference area (> 50 km), use demo coordinates so walking times make visual sense
+          const distToRef = calculateHaversineDistance(userLocation.lat, userLocation.lng, 40.7829, -73.9654);
+          const effectiveCoords = distToRef > 50000 ? { lat: 40.7829, lng: -73.9654 } : userLocation;
+
+          const enriched = enrichParksWithUserDistance(BASELINE_PARKS, effectiveCoords.lat, effectiveCoords.lng);
+          let filtered = filterParks(enriched, { filter: activeFilter, maxDistanceMeters: radiusMeters });
+          if (filtered.length === 0) {
+            filtered = filterParks(enriched, { filter: activeFilter });
+          }
+          if (filtered.length === 0) {
+            filtered = enriched;
+          }
+
+          const defaultPins = [
+            { top: '32%', left: '72%' },
+            { top: '44%', left: '52%' },
+            { top: '54%', left: '88%' },
+            { top: '78%', left: '55%' },
+            { top: '25%', left: '42%' },
+            { top: '65%', left: '35%' },
+          ];
+
+          const prepared = filtered.map((p, idx) => ({
+            ...p,
+            pinCoords: p.pinCoords || defaultPins[idx % defaultPins.length],
+            thumb: p.thumb || (idx % 2 === 0 ? getAssetPath('/assets/thumb_botanical_sm.png') : getAssetPath('/assets/thumb_central_park.png')),
+          }));
+
+          setParks(prepared);
+          if (!prepared.some((p) => p.id === selectedParkId)) {
+            setSelectedParkId(prepared[0]?.id || 'botanical');
+          }
+        }
       } finally {
         if (!isCancelled) setIsLoading(false);
       }
@@ -91,7 +126,7 @@ export default function ExplorePage() {
     };
   }, [userLocation, activeRadius, activeFilter]);
 
-  const filteredParks = parks.filter((park) => {
+  let filteredParks = parks.filter((park) => {
     if (activeFilter === 'All') return true;
     if (park.filterType && park.filterType.includes(activeFilter)) return true;
     if (activeFilter === 'Shaded' && park.canopyPercent >= 65) return true;
@@ -100,7 +135,11 @@ export default function ExplorePage() {
     return false;
   });
 
-  const selectedPark = filteredParks.find((p) => p.id === selectedParkId) || filteredParks[0] || parks[0];
+  if (filteredParks.length === 0 && parks.length > 0) {
+    filteredParks = parks;
+  }
+
+  const selectedPark = filteredParks.find((p) => p.id === selectedParkId) || filteredParks[0] || parks[0] || BASELINE_PARKS[0];
 
   return (
     <>
@@ -181,7 +220,7 @@ export default function ExplorePage() {
         {/* Right Panel: Radar Map Visual & Interactive Markers */}
         <main className="explore-map-view">
           <img
-            src="/assets/radar_map_clean.jpg"
+            src={getAssetPath('/assets/radar_map_clean.jpg')}
             alt="Dark styled green space radar map"
             className="map-radar-bg"
           />
@@ -242,30 +281,35 @@ export default function ExplorePage() {
           })}
 
           {/* Floating Directions Card (Bottom Right) */}
-          <div className="explore-floating-card">
-            <div className="float-card-thumb">
-              <img src={selectedPark.thumb} alt={selectedPark.name} />
-            </div>
+          {selectedPark && (
+            <div className="explore-floating-card">
+              <div className="float-card-thumb">
+                <img
+                  src={selectedPark.thumb || getAssetPath('/assets/thumb_botanical_sm.png')}
+                  alt={selectedPark.name || 'Selected Park'}
+                />
+              </div>
 
-            <div className="float-card-info">
-              <span className="float-walk-time">
-                Est. walking time
-              </span>
-              <span className="float-walk-title">
-                {selectedPark.walkTime} ({selectedPark.distance})
-              </span>
-              <Link href="/benefits" className="btn-primary-mint" style={{ padding: '8px 16px', fontSize: '12.5px' }}>
-                Get Directions <ArrowRight size={14} />
-              </Link>
+              <div className="float-card-info">
+                <span className="float-walk-time">
+                  Est. walking time
+                </span>
+                <span className="float-walk-title">
+                  {selectedPark.walkTime || '6 min'} ({selectedPark.distance || '480 m'})
+                </span>
+                <Link href="/benefits" className="btn-primary-mint" style={{ padding: '8px 16px', fontSize: '12.5px' }}>
+                  Get Directions <ArrowRight size={14} />
+                </Link>
+              </div>
             </div>
-          </div>
+          )}
         </main>
       </div>
 
       <SensoryResetModal
         isOpen={showSensoryModal}
         onClose={() => setShowSensoryModal(false)}
-        initialPark={selectedPark.name}
+        initialPark={selectedPark?.name || 'University Botanical Garden'}
       />
       <PocketModeModal
         isOpen={showPocketMode}

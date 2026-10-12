@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { X, Play, Pause, CheckCircle2, Volume2, Sparkles } from 'lucide-react';
+import { getAssetPath } from '../utils/assetPath.js';
 
 export default function DemoVideoModal({ isOpen, onClose }) {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -52,7 +53,7 @@ export default function DemoVideoModal({ isOpen, onClose }) {
           }}
         >
           <img
-            src="/assets/hero_bench.png"
+            src={getAssetPath('/assets/hero_bench.png')}
             alt="Demo Walkthrough"
             style={{
               position: 'absolute',

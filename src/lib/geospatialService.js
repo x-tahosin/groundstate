@@ -9,6 +9,8 @@
  * - Curated baseline parks with exact GPS coordinates for offline resilience
  */
 
+import { getAssetPath } from '../utils/assetPath.js';
+
 // Earth mean radius in meters
 const EARTH_RADIUS_METERS = 6371000;
 
@@ -73,8 +75,8 @@ export const BASELINE_PARKS = [
     ambientDecibels: 38,
     tags: ['Shaded', 'Quiet', 'Benches'],
     filterType: ['Shaded', 'Quiet'],
-    thumb: '/assets/thumb_botanical_sm.png',
-    panorama: '/assets/botanical_banner.png',
+    thumb: getAssetPath('/assets/thumb_botanical_sm.png'),
+    panorama: getAssetPath('/assets/botanical_banner.png'),
     pinCoords: { top: '32%', left: '72%' },
   },
   {
@@ -86,8 +88,8 @@ export const BASELINE_PARKS = [
     ambientDecibels: 42,
     tags: ['Shaded', 'Quiet', 'Benches'],
     filterType: ['Shaded', 'Quiet'],
-    thumb: '/assets/thumb_central_park.png',
-    panorama: '/assets/central_park_garden_hd.jpg',
+    thumb: getAssetPath('/assets/thumb_central_park.png'),
+    panorama: getAssetPath('/assets/central_park_garden_hd.jpg'),
     pinCoords: { top: '44%', left: '52%' },
   },
   {
@@ -99,8 +101,8 @@ export const BASELINE_PARKS = [
     ambientDecibels: 48,
     tags: ['Sunlit', 'Walking Path'],
     filterType: ['Sunlit'],
-    thumb: '/assets/thumb_riverside.png',
-    panorama: '/assets/bento_lake_hd.jpg',
+    thumb: getAssetPath('/assets/thumb_riverside.png'),
+    panorama: getAssetPath('/assets/bento_lake_hd.jpg'),
     pinCoords: { top: '54%', left: '88%' },
   },
   {
@@ -112,8 +114,8 @@ export const BASELINE_PARKS = [
     ambientDecibels: 40,
     tags: ['Quiet', 'Benches'],
     filterType: ['Quiet'],
-    thumb: '/assets/thumb_maple.png',
-    panorama: '/assets/bento_trees_hd.jpg',
+    thumb: getAssetPath('/assets/thumb_maple.png'),
+    panorama: getAssetPath('/assets/bento_trees_hd.jpg'),
     pinCoords: { top: '78%', left: '55%' },
   },
 ];
@@ -230,7 +232,7 @@ export async function fetchLiveOverpassGreenSpaces(lat, lon, radiusMeters = 1500
           ambientDecibels,
           tags,
           filterType: tags.filter((t) => ['Shaded', 'Sunlit', 'Quiet'].includes(t)),
-          thumb: idx % 2 === 0 ? '/assets/thumb_botanical_sm.png' : '/assets/thumb_central_park.png',
+          thumb: idx % 2 === 0 ? getAssetPath('/assets/thumb_botanical_sm.png') : getAssetPath('/assets/thumb_central_park.png'),
           source: 'openstreetmap-overpass',
         };
       });

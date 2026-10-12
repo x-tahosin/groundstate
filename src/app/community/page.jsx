@@ -8,6 +8,7 @@ import Footer from '../../components/Footer.jsx';
 import SensoryResetModal from '../../components/SensoryResetModal.jsx';
 import PocketModeModal from '../../components/PocketModeModal.jsx';
 import DigitalOceanAIModal from '../../components/DigitalOceanAIModal.jsx';
+import { getAssetPath } from '../../utils/assetPath.js';
 
 export default function CommunityPage() {
   const [likes, setLikes] = useState(342);
@@ -111,7 +112,7 @@ export default function CommunityPage() {
             {/* Top-Left: Person walking down park tree path */}
             <div className="bento-cell" style={{ gridRow: 'span 1' }}>
               <img
-                src="/assets/bento_walk_hd.jpg"
+                src={getAssetPath('/assets/bento_walk_hd.jpg')}
                 alt="Person walking down lush sunlit park trail"
               />
             </div>
@@ -119,7 +120,7 @@ export default function CommunityPage() {
             {/* Top-Right: Laptop and coffee on outdoor picnic table */}
             <div className="bento-cell">
               <img
-                src="/assets/bento_laptop_hd.jpg"
+                src={getAssetPath('/assets/bento_laptop_hd.jpg')}
                 alt="Laptop and coffee cup on wooden table in nature"
               />
             </div>
@@ -127,7 +128,7 @@ export default function CommunityPage() {
             {/* Bottom-Left: Sunset over park lake and city skyline */}
             <div className="bento-cell">
               <img
-                src="/assets/bento_lake_hd.jpg"
+                src={getAssetPath('/assets/bento_lake_hd.jpg')}
                 alt="Evening sunset over Central park lake with skyline reflections"
               />
             </div>
@@ -135,7 +136,7 @@ export default function CommunityPage() {
             {/* Bottom-Right: Park path with sunlight and trees */}
             <div className="bento-cell">
               <img
-                src="/assets/bento_trees_hd.jpg"
+                src={getAssetPath('/assets/bento_trees_hd.jpg')}
                 alt="Sunlit green park path with tall trees"
               />
             </div>
@@ -145,7 +146,7 @@ export default function CommunityPage() {
               <div className="testimonial-header">
                 <div className="testimonial-avatar">
                   <img
-                    src="/assets/avatar_devansh_hd.jpg"
+                    src={getAssetPath('/assets/avatar_devansh_hd.jpg')}
                     alt="@devansh avatar"
                   />
                 </div>

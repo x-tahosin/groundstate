@@ -21,6 +21,7 @@ import PocketModeModal from '../../components/PocketModeModal.jsx';
 import DigitalOceanAIModal from '../../components/DigitalOceanAIModal.jsx';
 import OfflineCardModal from '../../components/OfflineCardModal.jsx';
 import { isParkBookmarked, toggleParkBookmark } from '../../lib/offlineStorage.js';
+import { getAssetPath } from '../../utils/assetPath.js';
 
 export default function BenefitsPage() {
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -71,7 +72,7 @@ export default function BenefitsPage() {
             <div className="place-header-row">
               <div className="place-header-thumb">
                 <img
-                  src="/assets/thumb_botanical.png"
+                  src={getAssetPath('/assets/thumb_botanical.png')}
                   alt="University Botanical Garden"
                 />
               </div>
@@ -118,7 +119,7 @@ export default function BenefitsPage() {
 
           <div className="place-hero-right">
             <img
-              src="/assets/botanical_banner.png"
+              src={getAssetPath('/assets/botanical_banner.png')}
               alt="Panoramic sunlit botanical garden pathway with wooden bench"
               className="place-hero-panorama"
             />
@@ -182,7 +183,7 @@ export default function BenefitsPage() {
 
               <div className="step-card-img-wrap">
                 <img
-                  src="/assets/reset_optic.png"
+                  src={getAssetPath('/assets/reset_optic.png')}
                   alt="Person looking up at tree canopy"
                   className="step-card-img"
                 />
@@ -209,7 +210,7 @@ export default function BenefitsPage() {
 
               <div className="step-card-img-wrap">
                 <img
-                  src="/assets/reset_acoustic.png"
+                  src={getAssetPath('/assets/reset_acoustic.png')}
                   alt="Sunlit leaves and clear blue sky"
                   className="step-card-img"
                 />
@@ -236,7 +237,7 @@ export default function BenefitsPage() {
 
               <div className="step-card-img-wrap">
                 <img
-                  src="/assets/reset_sto.png"
+                  src={getAssetPath('/assets/reset_sto.png')}
                   alt="Backpack placed on park bench in nature"
                   className="step-card-img"
                 />

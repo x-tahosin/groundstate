@@ -8,6 +8,7 @@ import SensoryResetModal from '../components/SensoryResetModal.jsx';
 import PocketModeModal from '../components/PocketModeModal.jsx';
 import DigitalOceanAIModal from '../components/DigitalOceanAIModal.jsx';
 import DemoVideoModal from '../components/DemoVideoModal.jsx';
+import { getAssetPath } from '../utils/assetPath.js';
 
 export default function HomePage() {
   const [showSensoryModal, setShowSensoryModal] = useState(false);
@@ -78,7 +79,7 @@ export default function HomePage() {
         <section className="home-right">
           <div className="hero-visual-card">
             <img
-              src="/assets/coder_bench_perfect_hd.png"
+              src={getAssetPath('/assets/coder_bench_perfect_hd.png')}
               alt="GroundState nature sanctuary with remote worker on park bench"
               className="hero-coder-bench-img"
             />
@@ -94,7 +95,7 @@ export default function HomePage() {
 
               <div className="suggestion-thumbnail-wrap">
                 <img
-                  src="/assets/central_park_garden_hd.jpg"
+                  src={getAssetPath('/assets/central_park_garden_hd.jpg')}
                   alt="Central Park Garden walking path"
                   className="suggestion-thumb-img"
                 />
