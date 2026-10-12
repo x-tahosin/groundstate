@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.next/
+out/
+.DS_Store
+*.local
+.env
+.env*.local
+announcement.txt
+scripts/
+cover_url.txt
+uploaded_image_urls.json

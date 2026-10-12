@@ -1,0 +1,198 @@
+/* SolTerra — Natural Alpine Design System */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-forest-dark: #162822;
+  --color-forest-pine: #213B32;
+  --color-forest-moss: #36574B;
+  --color-forest-lichen: #5E7A6E;
+  
+  --color-amber-sun: #D97724;
+  --color-amber-golden: #E89A3C;
+  --color-amber-dusk: #C8622A;
+  
+  --color-stone-dark: #2B332F;
+  --color-stone-granite: #404D47;
+  --color-stone-slate: #5F6E67;
+  
+  --color-paper-light: #FBF9F5;
+  --color-paper-card: #F4F0E8;
+  --color-paper-border: #E5DFCFC;
+  --color-paper-divider: #D8D0BF;
+  
+  --color-ink-primary: #18221E;
+  --color-ink-secondary: #4A5852;
+  --color-ink-muted: #72807A;
+
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-paper-light);
+  color: var(--color-ink-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(217, 119, 36, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(33, 59, 50, 0.04) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Subtle organic paper card styling */
+.field-card {
+  background: var(--color-paper-card);
+  border: 1px solid var(--color-paper-border);
+  box-shadow: 0 4px 16px -2px rgba(22, 40, 34, 0.05);
+  border-radius: 14px;
+}
+
+.field-card-interactive {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.field-card-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -4px rgba(22, 40, 34, 0.08);
+  border-color: var(--color-amber-sun);
+}
+
+/* Tactile button styles */
+.btn-primary {
+  background: var(--color-forest-pine);
+  color: var(--color-paper-light);
+  border: 1px solid var(--color-forest-dark);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+}
+
+.btn-primary:hover {
+  background: var(--color-forest-dark);
+  box-shadow: 0 2px 8px rgba(22, 40, 34, 0.2);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-forest-pine);
+  border: 1px solid var(--color-forest-moss);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(33, 59, 50, 0.06);
+}
+
+.btn-sun {
+  background: var(--color-amber-sun);
+  color: #FFFFFF;
+  border: 1px solid var(--color-amber-dusk);
+  font-weight: 600;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+}
+
+.btn-sun:hover {
+  background: var(--color-amber-dusk);
+  box-shadow: 0 4px 12px rgba(200, 98, 42, 0.25);
+}
+
+/* Badge styling */
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-forest {
+  background: rgba(33, 59, 50, 0.1);
+  color: var(--color-forest-pine);
+  border: 1px solid rgba(33, 59, 50, 0.2);
+}
+
+.badge-amber {
+  background: rgba(217, 119, 36, 0.12);
+  color: var(--color-amber-dusk);
+  border: 1px solid rgba(217, 119, 36, 0.25);
+}
+
+.badge-do {
+  background: #E8F4FC;
+  color: #0069FF;
+  border: 1px solid #BFDFFF;
+}
+
+/* Night-vision friendly dark trail mode */
+.trail-night-mode {
+  background-color: #0D1412 !important;
+  color: #D69E2E !important;
+}
+
+/* Print styles for pocket card */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .printable-pocket-slip {
+    border: 2px dashed #000000 !important;
+    padding: 1.5rem !important;
+    page-break-inside: avoid;
+    max-width: 100% !important;
+    box-shadow: none !important;
+  }
+}
