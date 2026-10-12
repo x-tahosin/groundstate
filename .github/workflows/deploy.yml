@@ -1,0 +1,45 @@
+name: Deploy GroundState to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Next.js Static Export
+        run: |
+          npm run build
+        env:
+          GITHUB_PAGES: 'true'
+          NEXT_EXPORT: 'true'
+
+      - name: Prepare GitHub Pages Static Directory
+        run: |
+          mkdir -p out/groundstate
+          cp -r out/assets out/groundstate/assets 2>/dev/null || true
+          cp -r out/_next out/groundstate/_next 2>/dev/null || true
+          touch out/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
