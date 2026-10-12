@@ -6,9 +6,12 @@ import {
   enrichParksWithUserDistance 
 } from '../../../lib/geospatialService.js';
 
+export const dynamic = 'force-static';
+
 export async function GET(request) {
   try {
-    const { searchParams } = new URL(request.url);
+    const urlStr = request?.url || 'http://localhost:3000/api/places';
+    const { searchParams } = new URL(urlStr);
     const lat = parseFloat(searchParams.get('lat')) || 40.7850;
     const lon = parseFloat(searchParams.get('lon')) || -73.9680;
     const radiusMeters = parseInt(searchParams.get('radius'), 10) || 1500;
