@@ -14,7 +14,7 @@
 
 ![GroundState Banner](https://i.imgur.com/Z4ry72j.png)
 
-### 🌐 [Explore Live Application](https://x-tahosin.github.io/groundstate/) • 📝 [DEV.to Submission Post](https://dev.to/tahosin/groundstate-micro-escape-radar-3-minute-somatic-reset-powered-by-digitalocean-serverless-gpu-405l-temp-slug-4975552)
+### 🌐 [Explore Live Application](https://x-tahosin.github.io/groundstate/) • 📝 [DEV.to Submission Post](https://dev.to/tahosin/groundstate-micro-escape-radar-3-minute-somatic-reset-powered-by-digitalocean-serverless-gpu-47bl)
 
 </div>
 
