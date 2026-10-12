@@ -2,4 +2,4 @@
 :HL["https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap","style"]
 2:[["children",{"s":"__PAGE__","h":160}]]
 1:[["children",{"s":"how-it-works","h":96,"c":"$Q2"}]]
-0:{"b":"RYxumT6Q72vSGgWw9ZeeP","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
+0:{"b":"ChreOVMYr6Ja8b3UJVSOk","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
