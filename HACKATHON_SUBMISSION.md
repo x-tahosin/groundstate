@@ -1,4 +1,4 @@
-# GroundState 🌿 — Hackathon Submission Package
+# GroundState 🌿 :  Hackathon Submission Package
 **Target Category:** Best Use of DigitalOcean ($200 Featured Category)  
 **Hackathon Theme:** Open-Source AI Challenge: Week 1 (Touch Grass)  
 **Project Status:** 100% Production-Ready & Tested (21/21 Tests Passing, Exit Code 0)
@@ -25,9 +25,9 @@
 ## 2. Devpost Submission Questionnaire
 
 ### 💡 Inspiration & The Problem
-Modern software engineers and desk workers spend an average of **9.2 hours per day** staring at high-luminance computer displays at a fixed focal distance (45–65 cm). This triggers **ciliary muscle spasms (asthenopia)**, chronic sympathetic nervous system elevation, and cognitive burnout.
+Modern software engineers and desk workers spend an average of **9.2 hours per day** staring at high-luminance computer displays at a fixed focal distance (45-65 cm). This triggers **ciliary muscle spasms (asthenopia)**, chronic sympathetic nervous system elevation, and cognitive burnout.
 
-When developers attempt to take a break, they default to **scrolling on their smartphones** because finding a nearby quiet natural sanctuary involves friction, navigation complexity, and decision fatigue. Scrolling doesn't rest the brain or eyes—it exacerbates the problem.
+When developers attempt to take a break, they default to **scrolling on their smartphones** because finding a nearby quiet natural sanctuary involves friction, navigation complexity, and decision fatigue. Scrolling doesn't rest the brain or eyes: it exacerbates the problem.
 
 We built **GroundState** to solve this: an intentional green-space radar and somatic recovery experience designed to get desk workers outside and actively help them **put their screens away**.
 
@@ -37,7 +37,7 @@ We built **GroundState** to solve this: an intentional green-space radar and som
 GroundState bridges urban geospatial data with serverless artificial intelligence to guide knowledge workers from their desks into natural grounding in under 15 minutes:
 
 1. **Green Space & Micro-Escape Radar (`/explore`):**
-   - Instant discovery of nearby public parks, botanical gardens, and quiet courtyards within a 5–15 minute walking radius.
+   - Instant discovery of nearby public parks, botanical gardens, and quiet courtyards within a 5-15 minute walking radius.
    - Live metrics: Tree canopy shade percentage, ambient noise decibel rating, and pedestrian walking times calculated with Haversine spherical kinematics (80 m/min).
    - Dynamic filtering: Shaded canopy, Quiet sanctuaries (<45 dB), and Sunlit clearings.
 
@@ -47,9 +47,9 @@ GroundState bridges urban geospatial data with serverless artificial intelligenc
    - Monotonic warm GPU execution (~140ms latency, $0.000063 per execution) with real telemetry logging (`/api/telemetry`).
 
 3. **3-Minute Somatic Recovery Experience (`/benefits`):**
-   - **Minute 1 — Optic Reset (60s):** Eye strain relief based on the 20-20-20 rule, gazing into deep tree canopies to relax intraocular ciliary muscles.
-   - **Minute 2 — Acoustic Relaxation (60s):** Filtering out urban vehicular rumble and tuning into ambient wind and birdsong.
-   - **Minute 3 — Physical Stow Mode (60s):** Diaphragmatic box breathing (4s inhale, 4s hold, 4s exhale) while stowing the smartphone in a pocket.
+   - **Minute 1 :  Optic Reset (60s):** Eye strain relief based on the 20-20-20 rule, gazing into deep tree canopies to relax intraocular ciliary muscles.
+   - **Minute 2 :  Acoustic Relaxation (60s):** Filtering out urban vehicular rumble and tuning into ambient wind and birdsong.
+   - **Minute 3 :  Physical Stow Mode (60s):** Diaphragmatic box breathing (4s inhale, 4s hold, 4s exhale) while stowing the smartphone in a pocket.
    - Guided by synthesized biophilic transition chimes powered by the Web Audio API.
 
 4. **OLED Screen Stow Mode:**
@@ -77,7 +77,7 @@ graph TD
     subgraph Box2 ["2. DigitalOcean Serverless AI Gateway"]
         D["Somatic Prompt Synthesis<br/>Micro-Climate Payload Extraction"]
         E["DigitalOcean Serverless GPU Cluster<br/>Endpoint: inference.do-ai.run/v1<br/>Model: digitalocean/gemma-4-31B-it"]
-        F["Resilient Multi-Tier Pipeline<br/>Warm GPU Speculative Decoded Cache<br/>Monotonic Execution: 135ms–148ms"]
+        F["Resilient Multi-Tier Pipeline<br/>Warm GPU Speculative Decoded Cache<br/>Monotonic Execution: 135ms-148ms"]
         C --> D
         D --> E
         E --> F
@@ -128,7 +128,7 @@ graph TD
 
 - **Pixel-Accurate Reproduction:** 100% faithful adherence to the 5 approved visual design mockups.
 - **100% Test Coverage:** 21 out of 21 unit/integration tests passing (`npm test`), plus complete 8-step Playwright browser end-to-end test suite (`python tests/e2e_groundstate_production.py`).
-- **Meaningful DigitalOcean AI Integration:** DigitalOcean AI is not a gimmick here—it serves as the core biological engine translating environmental sensors into actionable somatic wellness routines.
+- **Meaningful DigitalOcean AI Integration:** DigitalOcean AI is not a gimmick here: it serves as the core biological engine translating environmental sensors into actionable somatic wellness routines.
 - **True Anti-Screen Technology:** An application whose ultimate goal is to get you to lock your screen and put it in your pocket.
 
 ---
@@ -152,9 +152,9 @@ graph TD
 
 | Timestamp | Screen / Visual | Voiceover Script (Calm, Confident, Professional) |
 | :--- | :--- | :--- |
-| **0:00 – 0:20** | **Home Page (`/`)**<br>Showing Hero banner, "GroundState" branding, and suggestion card. | *"Software developers spend over 9 hours a day staring at bright monitors, leading to eye strain and digital burnout. When we take a break, we usually scroll our phones, making it worse. This is GroundState: the micro-escape radar that helps desk workers touch grass and put their screens away."* |
-| **0:20 – 0:45** | **Explore Radar (`/explore`)**<br>Toggle radius (5/10/15 min) and click "Quiet" filter chip. | *"From our Explore radar, GroundState locates green spaces within a 5 to 15-minute walk. It calculates walking times using real pedestrian kinematics, and filters parks by tree canopy shade and ambient decibel levels."* |
-| **0:45 – 1:15** | **DigitalOcean AI Modal**<br>Click DigitalOcean badge, click **Re-run Inference**, watch status `200 OK` and `140ms latency`. | *"Here is where DigitalOcean Serverless GPU Inference comes in. GroundState evaluates micro-climate data—canopy density, time of day, and developer fatigue—and runs serverless inference using gemma-4-31B-it. In just 140 milliseconds, it prescribes a bespoke 3-minute somatic reset tailored to this exact park."* |
-| **1:15 – 1:40** | **3-Minute Reset Timer (`/benefits`)**<br>Click "Start 3-Minute Reset", listen to Web Audio chime, step through Optic, Acoustic, and Physical stages. | *"When the developer arrives at the park, they start the 3-minute reset. Minute 1 relaxes ciliary eye muscles by focusing on distant canopies. Minute 2 tunes into natural wind rustle. Minute 3 guides diaphragmatic box breathing as you stow your phone in your pocket, with harmonic chimes guiding stage transitions."* |
-| **1:40 – 1:55** | **Pocket Mode & Offline Card**<br>Engage OLED Pocket Stow Mode, preview printable slip. | *"Our OLED Pocket Mode blacks out the display and uses Screen Wake Lock to conserve battery while keeping the phone stowed. For zero-connectivity escapes, a printable offline field slip is available."* |
-| **1:55 – 2:10** | **Conclusion & Architecture**<br>Return to Home or terminal showing 21/21 passing tests. | *"GroundState is built with Next.js 16, pure Vanilla CSS, Web Audio API, and DigitalOcean Serverless AI. Fully verified with 21 passing automated tests. GroundState: Step away from the screen, recalibrate your senses, and touch grass."* |
+| **0:00 - 0:20** | **Home Page (`/`)**<br>Showing Hero banner, "GroundState" branding, and suggestion card. | *"Software developers spend over 9 hours a day staring at bright monitors, leading to eye strain and digital burnout. When we take a break, we usually scroll our phones, making it worse. This is GroundState: the micro-escape radar that helps desk workers touch grass and put their screens away."* |
+| **0:20 - 0:45** | **Explore Radar (`/explore`)**<br>Toggle radius (5/10/15 min) and click "Quiet" filter chip. | *"From our Explore radar, GroundState locates green spaces within a 5 to 15-minute walk. It calculates walking times using real pedestrian kinematics, and filters parks by tree canopy shade and ambient decibel levels."* |
+| **0:45 - 1:15** | **DigitalOcean AI Modal**<br>Click DigitalOcean badge, click **Re-run Inference**, watch status `200 OK` and `140ms latency`. | *"Here is where DigitalOcean Serverless GPU Inference comes in. GroundState evaluates micro-climate data: canopy density, time of day, and developer fatigue: and runs serverless inference using gemma-4-31B-it. In just 140 milliseconds, it prescribes a bespoke 3-minute somatic reset tailored to this exact park."* |
+| **1:15 - 1:40** | **3-Minute Reset Timer (`/benefits`)**<br>Click "Start 3-Minute Reset", listen to Web Audio chime, step through Optic, Acoustic, and Physical stages. | *"When the developer arrives at the park, they start the 3-minute reset. Minute 1 relaxes ciliary eye muscles by focusing on distant canopies. Minute 2 tunes into natural wind rustle. Minute 3 guides diaphragmatic box breathing as you stow your phone in your pocket, with harmonic chimes guiding stage transitions."* |
+| **1:40 - 1:55** | **Pocket Mode & Offline Card**<br>Engage OLED Pocket Stow Mode, preview printable slip. | *"Our OLED Pocket Mode blacks out the display and uses Screen Wake Lock to conserve battery while keeping the phone stowed. For zero-connectivity escapes, a printable offline field slip is available."* |
+| **1:55 - 2:10** | **Conclusion & Architecture**<br>Return to Home or terminal showing 21/21 passing tests. | *"GroundState is built with Next.js 16, pure Vanilla CSS, Web Audio API, and DigitalOcean Serverless AI. Fully verified with 21 passing automated tests. GroundState: Step away from the screen, recalibrate your senses, and touch grass."* |

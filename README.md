@@ -22,9 +22,9 @@
 
 ## 📌 The Problem: The 9-Hour Screen Paradox
 
-Modern software engineers, developers, and desk-bound knowledge workers spend an average of **9.2 hours per day** staring at high-luminance computer displays at a fixed focal distance (45–65 cm). This triggers **ciliary muscle spasms (asthenopia)**, chronic sympathetic nervous system elevation, and cognitive burnout.
+Modern software engineers, developers, and desk-bound knowledge workers spend an average of **9.2 hours per day** staring at high-luminance computer displays at a fixed focal distance (45-65 cm). This triggers **ciliary muscle spasms (asthenopia)**, chronic sympathetic nervous system elevation, and cognitive burnout.
 
-When developers finally attempt to step away for a break, they default to **scrolling on their smartphones** because finding a nearby quiet natural sanctuary involves friction, navigation complexity, and decision fatigue. Scrolling does not rest the human brain or eyes—it exacerbates the problem.
+When developers finally attempt to step away for a break, they default to **scrolling on their smartphones** because finding a nearby quiet natural sanctuary involves friction, navigation complexity, and decision fatigue. Scrolling does not rest the human brain or eyes: it exacerbates the problem.
 
 **GroundState** solves this with an intentional, low-friction green-space radar and a science-backed 3-minute somatic recovery routine designed to help desk workers **put their screens away and touch grass**.
 
@@ -33,9 +33,9 @@ When developers finally attempt to step away for a break, they default to **scro
 ## ✨ Core Features & Capabilities
 
 ### 1. Green Space & Micro-Escape Radar (`/explore`)
-- **Instant Discovery:** Identifies public parks, botanical gardens, and quiet urban courtyards within a 5–15 minute walking radius.
+- **Instant Discovery:** Identifies public parks, botanical gardens, and quiet urban courtyards within a 5-15 minute walking radius.
 - **Pedestrian Kinematics:** Accurately computes walking times using Haversine spherical geometry (80 m/min).
-- **Environmental Metrics:** Real-time tree canopy shade percentage (≥65%) and ambient noise decibel levels (38–52 dB).
+- **Environmental Metrics:** Real-time tree canopy shade percentage (≥65%) and ambient noise decibel levels (38-52 dB).
 - **Dynamic Filters:** One-tap filtering for Shaded Canopy, Quiet Sanctuaries (<45 dB), and Sunlit Clearings.
 
 ### 2. DigitalOcean Serverless AI Inference (`/api/sensory-reset`)
@@ -44,9 +44,9 @@ When developers finally attempt to step away for a break, they default to **scro
 - **Low Latency & Telemetry:** Warm GPU execution (~140ms latency, $0.000063 per routine) with built-in telemetry auditing (`/api/telemetry`).
 
 ### 3. 3-Minute Somatic Recovery Experience (`/benefits`)
-- **Minute 1 — Optic Reset (60s):** Eye strain relief based on the 20-20-20 ophthalmological rule, gazing into deep tree canopies to relax intraocular ciliary muscles.
-- **Minute 2 — Acoustic Relaxation (60s):** Filtering out urban vehicular rumble (70 Hz) and tuning into ambient wind and leaf rustle (420 Hz).
-- **Minute 3 — Physical Stow Mode (60s):** Diaphragmatic box breathing (4s inhale, 4s hold, 4s exhale) while stowing the smartphone in a pocket.
+- **Minute 1 :  Optic Reset (60s):** Eye strain relief based on the 20-20-20 ophthalmological rule, gazing into deep tree canopies to relax intraocular ciliary muscles.
+- **Minute 2 :  Acoustic Relaxation (60s):** Filtering out urban vehicular rumble (70 Hz) and tuning into ambient wind and leaf rustle (420 Hz).
+- **Minute 3 :  Physical Stow Mode (60s):** Diaphragmatic box breathing (4s inhale, 4s hold, 4s exhale) while stowing the smartphone in a pocket.
 - **Biophilic Audio Synthesizer:** Guided by synthesized transition chimes generated in real-time via the browser's native **Web Audio API**.
 
 ### 4. OLED Screen-Free Pocket Stow Mode
@@ -72,7 +72,7 @@ graph TD
     subgraph Box2 ["2. DigitalOcean Serverless AI Gateway"]
         D["Somatic Prompt Synthesis<br/>Micro-Climate Payload Extraction"]
         E["DigitalOcean Serverless GPU Cluster<br/>Endpoint: inference.do-ai.run/v1<br/>Model: digitalocean/gemma-4-31B-it"]
-        F["Resilient Multi-Tier Pipeline<br/>Warm GPU Speculative Decoded Cache<br/>Monotonic Execution: 135ms–148ms"]
+        F["Resilient Multi-Tier Pipeline<br/>Warm GPU Speculative Decoded Cache<br/>Monotonic Execution: 135ms-148ms"]
         C --> D
         D --> E
         E --> F
